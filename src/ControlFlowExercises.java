@@ -42,23 +42,47 @@ public class ControlFlowExercises {
 
         Scanner conScan = new Scanner(System.in);
 
-            System.out.println("Drop a number, respectfully: ");
-            int urNum = conScan.nextInt();
-
-            System.out.println("Here is a table...");
-            System.out.println("number | Squared | cubed");
-
-            for (int i = 1; i <= urNum; i++){
-                int square = i * i;
-                int cube = i * i * i;
-                System.out.printf("%d     | %d      | %d    %n", i, square, cube);
-                System.out.println("Shall we continue, y/n?");
-                String answer = conScan.next();
-                boolean uAnswer = answer.equalsIgnoreCase("y");
-                if (!uAnswer){
-                    break;
-                }
+//            System.out.println("Drop a number, respectfully: ");
+//            int urNum = conScan.nextInt();
+//
+//            System.out.println("Here is a table...");
+//            System.out.println("number | Squared | cubed");
+//
+//            for (int i = 1; i <= urNum; i++){
+//                int square = i * i;
+//                int cube = i * i * i;
+//                System.out.printf("%d     | %d      | %d    %n", i, square, cube);
+//                System.out.println("Shall we continue, y/n?");
+//                String answer = conScan.next();
+//                boolean uAnswer = answer.equalsIgnoreCase("y");
+//                if (!uAnswer){
+//                    break;
+//                }
+//
+//            }
+    System.out.println("Would you like me to check what grade you got? (Y/N)");
+    String answer = conScan.next();
+    boolean checkGrade = answer.equalsIgnoreCase("y");
+    if (checkGrade) {
+        do {
+            System.out.println("What was you grade, 0-100?: ");
+            int grade = conScan.nextInt();
+            if (grade >= 88) {
+                System.out.println("You got an A!");
+            } else if (grade >= 80) {
+                System.out.println("You got a B!");
+            } else if (grade >= 67) {
+                System.out.println("C's get degrees");
+            } else if (grade >= 60) {
+                System.out.println("D, really isn't your best performance");
+            } else {
+                System.out.println("Ya failed bud");
             }
+            System.out.println("Shall we check another, y/n?");
+            answer = conScan.next();
+            checkGrade = answer.equalsIgnoreCase("y");
 
+            } while (checkGrade);
+        }
     }
 }
