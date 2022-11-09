@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main(String[] arg) {
 //        int i = 5;
@@ -26,19 +27,38 @@ public class ControlFlowExercises {
 //            }
 //        }
 // FIZZBUZZ FUN
-        for (int i = 1; i <= 100; i++) {
+//        for (int i = 1; i <= 100; i++) {
+//
+//            if (i % 15 == 0){
+//                System.out.println("Fizzbuzz");
+//            } else if (i % 5 == 0){
+//                System.out.println("Buzz");
+//            } else if (i % 3 == 0){
+//                System.out.println("Fizz");
+//            } else {
+//                System.out.print(i + " ");
+//            }
+//        }
 
-            if (i % 15 == 0){
-                System.out.println("Fizzbuzz");
-            } else if (i % 5 == 0){
-                System.out.println("Buzz");
-            } else if (i % 3 == 0){
-                System.out.println("Fizz");
-            } else {
-                System.out.print(i + " ");
+        Scanner conScan = new Scanner(System.in);
+
+            System.out.println("Drop a number, respectfully: ");
+            int urNum = conScan.nextInt();
+
+            System.out.println("Here is a table...");
+            System.out.println("number | Squared | cubed");
+
+            for (int i = 1; i <= urNum; i++){
+                int square = i * i;
+                int cube = i * i * i;
+                System.out.printf("%d     | %d      | %d    %n", i, square, cube);
+                System.out.println("Shall we continue, y/n?");
+                String answer = conScan.next();
+                boolean uAnswer = answer.equalsIgnoreCase("y");
+                if (!uAnswer){
+                    break;
+                }
             }
-        }
-
 
     }
 }
