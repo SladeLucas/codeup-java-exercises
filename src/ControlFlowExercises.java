@@ -67,16 +67,28 @@ public class ControlFlowExercises {
         do {
             System.out.println("What was you grade, 0-100?: ");
             int grade = conScan.nextInt();
-            if (grade >= 88) {
-                System.out.println("You got an A!");
+            if (grade >= 99) {
+                System.out.println("You got an A+!");
+            } else if (grade >= 90) {
+                System.out.println("You got a A!");
+            } else if (grade >= 88) {
+                System.out.println("Just an A-");
+            } else if (grade >= 86) {
+                System.out.println("B+, really isn't your best performance");
+            } else if (grade >= 82) {
+                System.out.println("just a B");
             } else if (grade >= 80) {
-                System.out.println("You got a B!");
+                System.out.println("lame B-");
+            } else if (grade >= 78) {
+                System.out.println("C+ is just a pat on the back");
+            } else if (grade >= 69) {
+                System.out.println("C");
             } else if (grade >= 67) {
-                System.out.println("C's get degrees");
+                System.out.println("C-");
             } else if (grade >= 60) {
-                System.out.println("D, really isn't your best performance");
+                System.out.println("D is just bad");
             } else {
-                System.out.println("Ya failed bud");
+                System.out.println("F, go home get some rest");
             }
             System.out.println("Shall we check another, y/n?");
             answer = conScan.next();
