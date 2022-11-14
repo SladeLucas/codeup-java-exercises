@@ -21,13 +21,13 @@ public class MethodsExercises {
         Scanner scanner = new Scanner(System.in);
         System.out.printf("Enter a number between %d and %d:%n", min, max);
            int usernum = scanner.nextInt();
-           boolean intinrange = (usernum <= max && usernum >= min);
-           while (!intinrange) {
+           boolean intrange = (usernum <= max && usernum >= min);
+           while (!intrange) {
                System.out.printf("Unacceptable. Please input a number between %d and %d%n", min, max);
                usernum = scanner.nextInt();
-               intinrange = (usernum <= max && usernum >= min);
+               intrange = (usernum <= max && usernum >= min);
            }
-               System.out.printf("Your number is acceptable. I wanted a number between %d and %d, and your number was %d", min, max, usernum);
+               System.out.printf("Your number is acceptable. I wanted a number between %d and %d, and your number was %d%n", min, max, usernum);
 
            return usernum;
 
@@ -42,6 +42,32 @@ public class MethodsExercises {
         return userinput;
     }
 
+    public static int factNum(int userNum){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Would you like to see a factorial? (Y/N)");
+        String answer = scanner.next();
+        boolean again = answer.equalsIgnoreCase("y");
+        if (again) {
+            do {
+
+            System.out.println("Enter an Integer from 1-10 ...");
+            userNum = scanner.nextInt();
+            if (userNum <= 10 && userNum > 0) {
+                int i, fact = 1;
+                int number = userNum;
+                for (i = 1; i < number; i++) {
+                    fact = fact * i;
+                }
+                System.out.println("Factorial of " + number + " is: " + fact);
+                System.out.println("Would you like to do a different number? Y/N");
+                answer = scanner.next();
+                again = answer.equalsIgnoreCase("y");
+            }
+            }while (again);
+        }
+      return userNum;
+    }
+
     public static void main(String[] arg){
         System.out.println(numMath(2, 5));
         System.out.println(subMath(2, 5));
@@ -50,5 +76,7 @@ public class MethodsExercises {
         //the 0 resulted in an error
         System.out.print("Enter a number between 1 and 10: ");
         int userInput = getInteger(1, 10);
+        factNum(1);
+
     }
 }
