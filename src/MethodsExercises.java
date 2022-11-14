@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class MethodsExercises {
     Scanner scanner = new Scanner(System.in);
@@ -41,7 +42,7 @@ public class MethodsExercises {
         }
         return userinput;
     }
-
+// the factNum was fun
     public static int factNum(int userNum){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Would you like to see a factorial? (Y/N)");
@@ -49,14 +50,13 @@ public class MethodsExercises {
         boolean again = answer.equalsIgnoreCase("y");
         if (again) {
             do {
-
             System.out.println("Enter an Integer from 1-10 ...");
             userNum = scanner.nextInt();
             if (userNum <= 10 && userNum > 0) {
-                int i, fact = 1;
+                int fact = 1;
                 int number = userNum;
-                for (i = 1; i < number; i++) {
-                    fact = fact * i;
+                for (int i = 1; i <= number; i++) {
+                    fact = fact*i;
                 }
                 System.out.println("Factorial of " + number + " is: " + fact);
                 System.out.println("Would you like to do a different number? Y/N");
@@ -66,6 +66,31 @@ public class MethodsExercises {
             }while (again);
         }
       return userNum;
+    }
+    public static int diceGame (int x, int y) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How many sides are on one of your die?");
+        int sides = scanner.nextInt();
+        System.out.println("Roll the dice? Y/N");
+        String answer = scanner.next();
+        boolean again = answer.equalsIgnoreCase("y");
+        Random randomNumber = new Random();
+        if (again) {
+            do {
+                for (int i = 0; i < 1; i++) {
+                    System.out.print("you rolled: ");
+                    System.out.print(randomNumber.nextInt(sides)+1);
+                    System.out.print(", and ");
+                    System.out.print(randomNumber.nextInt(sides)+1);
+                    System.out.println("!");
+                }
+                System.out.println("Would you like to do a different number? Y/N");
+                answer = scanner.next();
+                again = answer.equalsIgnoreCase("y");
+            } while (again);
+
+        }
+        return sides;
     }
 
     public static void main(String[] arg){
@@ -77,6 +102,6 @@ public class MethodsExercises {
         System.out.print("Enter a number between 1 and 10: ");
         int userInput = getInteger(1, 10);
         factNum(1);
-
+        diceGame(2, 4);
     }
 }
