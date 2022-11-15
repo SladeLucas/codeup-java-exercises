@@ -30,12 +30,25 @@ public class Input {
         return input;
     }
     public static int getInt(){
-
+        int input = Integer.parseInt(pscanner.nextLine());
+        return input;
     }
     public static double getDouble(double min, double max){
-
+        System.out.printf("Enter a number between %f and %f: %n", min, max);
+        double input = Double.parseDouble(pscanner.nextLine());
+            if(input < min){
+                System.out.println("Try a higher number: ");
+                return getDouble(min, max);
+            } else if(input > max) {
+                System.out.println("Try a lower number: ");
+                return getDouble(min, max);
+            }
+        System.out.printf("That number %d is between %f and %f", input, min, max);
+        return input;
     }
+
     public static double getDouble(){
-
-    }
+        double input = Double.parseDouble(pscanner.nextLine());
+        return input;
+    };
 }
