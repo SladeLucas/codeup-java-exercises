@@ -1,8 +1,5 @@
-
-
 public class Person {
-
-        private String name;
+    private String name;
 
         public static String getName(Person pname) {
             return pname.name;
@@ -21,6 +18,10 @@ public class Person {
         public void sayHello() {
 //TODO: print a message to the console using the person's name
             System.out.println("Hello from " + this.name + "!");
+        }
+
+        public Person(String newName){
+            setName(newName);
         }
 
     public static void main(String[] args) {
