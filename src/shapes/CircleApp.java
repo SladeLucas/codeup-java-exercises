@@ -10,7 +10,7 @@ public class CircleApp {
 
 
             System.out.printf("TWould you like to create another circle?%n");
-            response = Input.yesNo();
+            response = Input.yesNo("");
         };
         System.out.printf("Guess we will see you around.%n");
     }
