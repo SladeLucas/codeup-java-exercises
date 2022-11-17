@@ -13,10 +13,12 @@ public class Square extends Rectangle{
         this.length = length;
         this.width = length;
     }
+    @Override
     public int getPerimeter() {
 
         return this.length * 4;
     }
+    @Override
     public int getArea() {
         return this.length * this.length;
     }
